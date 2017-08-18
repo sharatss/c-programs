@@ -1,0 +1,36 @@
+#Program to check whether a number is Narcissistic number or not
+Example:-
+For example the 3-digit decimal number 153 is a narcissistic number because 153 = 13 + 53 + 33
+
+370=3*3*3 + 7*7*7 +0*0*0
+1634= 1*1*1*1 + 6*6*6*6 + 3* 3 *3 *3 + 4*4*4
+
+
+Program:-
+
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+   int n,m,d,r=0,x=0;
+   printf("Enter number to check the given number is Narcissistic number or not\n");
+   scanf("%d",&n);
+   m=n;
+   while(n!=0)
+   {
+      d=n%10;
+      r=r+1;
+      n=n/10;
+   }
+   n=m;
+   while(n!=0)
+   {
+      d=n%10;
+      x=x+pow(d,r);
+      n=n/10;
+   }
+   if(m==x)
+      print("Narcissistic number\n");
+   else
+      print("Not a Narcissistic number\n");
+}
